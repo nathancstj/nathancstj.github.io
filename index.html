@@ -18,22 +18,45 @@
     <!-- Header -->
     <section id="header">
       <header>
+        <div id="language-toggle" style="text-align:right; margin: 10px;">
+  <button onclick="switchLanguage('fr')">Français</button>
+  <button onclick="switchLanguage('en')">English</button>
+</div>
         <span class="image avatar"
           ><img src="images/adobe1.png" alt=""
         /></span>
         <h1 id="logo"><a href="#">Christ Jonathan Saint Jean</a></h1>
         <p>
-          Passionné des Relations internationales, des sciences politiques, du Droit public et l'économie, je fais une maîtrise en Études internationales à l'Université Laval.
-          J'ai étudié la Science politique, Relations internationales à l'Université Quisqueya, Haïti et je compte pleinement poursuivre ma formation vers une étude doctorale.
+          <div class="lang fr">
+  <h2></h2>
+  <p>Passionné des relations internationales, du droit public et du développement durable, je poursuis une maîtrise en Études internationales à l’Université Laval...</p>
+</div>
+
+<div class="lang en" style="display:none;">
+  <h2></h2>
+  <p>Passionate about international relations, public law, and sustainable development, I’m pursuing a master’s degree in International Studies at Université Laval...</p>
+</div>
+
         </p>
       </header>
       <nav id="nav">
-        <ul>
-          <li><a href="#one" class="active">À propos</a></li>
-          <li><a href="#two">Mon travail</a></li>
-          <li><a href="#three">Mon CV</a></li>
-          <li><a href="#four">Contact</a></li>
-        </ul>
+        <div class="lang fr">
+  <ul>
+    <li><a href="#one" class="active">À propos</a></li>
+    <li><a href="#two">Mon travail</a></li>
+    <li><a href="#three">Mon CV</a></li>
+    <li><a href="#four">Contact</a></li>
+  </ul>
+</div>
+<div class="lang en" style="display:none;">
+  <ul>
+    <li><a href="#one" class="active">About</a></li>
+    <li><a href="#two">My Work</a></li>
+    <li><a href="#three">My Resume</a></li>
+    <li><a href="#four">Contact</a></li>
+  </ul>
+</div>
+
       </nav>
       <footer>
         <ul class="icons">
@@ -79,42 +102,71 @@
           <div class="container">
             <header class="major">
               <h2>CHRIST JONATHAN SAINT JEAN</h2>
-              <p>Maîtrise en Études internationales</p>
-            </header>
-            <p>
-              Animé par une profonde passion pour les grands enjeux internationaux, la diversité culturelle et le développement durable, je m'engage à comprendre les dynamiques qui façonnent notre monde et à contribuer à des solutions durables.
-              Originaire d’un État sous-développé, mon parcours personnel nourrit ma volonté de surmonter les défis structurels et sociaux auxquels font face de nombreuses régions du globe.
-              Mon intérêt pour la recherche m’a conduit à explorer les réalités de la Caraïbe et de l’Amérique latine, et je poursuis activement ces travaux afin de mieux éclairer les trajectoires de développement et les opportunités de transformation. 
-              
-            </p>
-          </div>
-        </section>
+              <!-- 🇫🇷 Version française -->
+<section id="one" class="lang fr">
+  <div class="container">
+    <header>
+      <p>Maîtrise en Études internationales</p>
+    </header>
+    <p>
+      Animé par une profonde passion pour les grands enjeux internationaux, la diversité culturelle et le développement durable, je m'engage à comprendre les dynamiques qui façonnent notre monde et à contribuer à des solutions durables.
+      Originaire d’un État sous-développé, mon parcours personnel nourrit ma volonté de surmonter les défis structurels et sociaux auxquels font face de nombreuses régions du globe.Mon intérêt pour la recherche m’a conduit à explorer les réalités de la Caraïbe et de l’Amérique latine, et je poursuis activement ces travaux afin de mieux éclairer les trajectoires de développement et les opportunités de transformation.
+    </p>
+  </div>
+</section>
 
+<!-- 🇬🇧 Version anglaise -->
+<section id="one" class="lang en" style="display:none;">
+  <div class="container">
+    <header>
+      <p>Master’s Degree in International Studies</p>
+    </header>
+    <p>
+      Driven by a deep passion for major international issues, cultural diversity, and sustainable development, I am committed to understanding the dynamics that shape our world and contributing to lasting solutions.
+      Coming from an underdeveloped state, my personal journey fuels my determination to overcome the structural and social challenges faced by many regions across the globe. My interest in research has led me to explore the realities of the Caribbean and Latin America, and I actively pursue this work to better illuminate development pathways and opportunities for transformation.
+    </p>
+  </div>
+</section>
         <!-- Two -->
-        <section id="two">
-          <div class="container">
-            <h3>Mes réalisations</h3>
-            <p>
-              Mon engagement académique et professionnel se manifeste déjà à travers plusieurs initiatives concrètes. 
-              Sans publications formelles pour l’instant, je concentre mes efforts sur le développement de compétences interdisciplinaires, la participation à des projets de recherche, et l’animation d’activités de leadership et de communication. 
-              Ces expériences constituent les fondations de mon avenir académique et professionnel, que je construis avec rigueur, curiosité et détermination.
-            </p>
-            <ul class="feature-icons">
-              <li class="icon solid fa-code">
-                J'apprend et pratique le code R/HTML/CSS
-              </li>
-              <li class="icon solid fa-cubes">
-                Conseiller aux affaires Internationales et Diplomatiques (Gouvernement Jeunesse d'Haiti)
-              </li>
-              <li class="icon solid fa-book">
-                Redacteur, correcteur d'article de journal en ligne
-              </li>
-              <li class="icon solid fa-coffee">Licence en Science politique, Relations Internationales</li>
-              <li class="icon solid fa-bolt">Certificat en Management Responsable, Ressources Humaines</li>
-              <li class="icon solid fa-users">Membre Toastmasters International</li>
-            </ul>
-          </div>
-        </section>
+        <!-- 🇫🇷 Version française -->
+<section id="two" class="lang fr">
+  <div class="container">
+    <h3>Mes réalisations</h3>
+    <p>
+      Mon engagement académique et professionnel se manifeste déjà à travers plusieurs initiatives concrètes. 
+      Sans publications formelles pour l’instant, je concentre mes efforts sur le développement de compétences interdisciplinaires, la participation à des projets de recherche, et l’animation d’activités de leadership et de communication. 
+      Ces expériences constituent les fondations de mon avenir académique et professionnel, que je construis avec rigueur, curiosité et détermination.
+    </p>
+    <ul class="feature-icons">
+      <li class="icon solid fa-code">J'apprends et pratique le code R/HTML/CSS</li>
+      <li class="icon solid fa-cubes">Conseiller aux affaires Internationales et Diplomatiques (Gouvernement Jeunesse d'Haïti)</li>
+      <li class="icon solid fa-book">Rédacteur, correcteur d'articles de journaux en ligne</li>
+      <li class="icon solid fa-coffee">Licence en Science politique, Relations Internationales</li>
+      <li class="icon solid fa-bolt">Certificat en Management Responsable, Ressources Humaines</li>
+      <li class="icon solid fa-users">Membre Toastmasters International</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 🇬🇧 Version anglaise -->
+<section id="two" class="lang en" style="display:none;">
+  <div class="container">
+    <h3>My Achievements</h3>
+    <p>
+      My academic and professional commitment is already reflected in several concrete initiatives. 
+      Although I have no formal publications yet, I focus my efforts on developing interdisciplinary skills, participating in research projects, and leading activities in leadership and communication. 
+      These experiences form the foundation of my academic and professional future, which I build with rigor, curiosity, and determination.
+    </p>
+    <ul class="feature-icons">
+      <li class="icon solid fa-code">Learning and practicing R/HTML/CSS coding</li>
+      <li class="icon solid fa-cubes">Advisor for International and Diplomatic Affairs (Youth Government of Haiti)</li>
+      <li class="icon solid fa-book">Editor and proofreader for online journal articles</li>
+      <li class="icon solid fa-coffee">Bachelor’s in Political Science, International Relations</li>
+      <li class="icon solid fa-bolt">Certificate in Responsible Management, Human Resources</li>
+      <li class="icon solid fa-users">Member of Toastmasters International</li>
+    </ul>
+  </div>
+</section>
 
         <!-- Three -->
         <section id="three">
@@ -186,6 +238,16 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+  function switchLanguage(lang) {
+    const allLangs = document.querySelectorAll('.lang');
+    allLangs.forEach(el => el.style.display = 'none');
+
+    const selected = document.querySelectorAll('.lang.' + lang);
+    selected.forEach(el => el.style.display = 'block');
+  }
+</script>
+
   </body>
 </html>
 

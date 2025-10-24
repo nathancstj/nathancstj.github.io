@@ -3448,3 +3448,16 @@ input[type="button"]:disabled,
   .button {
     padding: 0;
   }
+  #language-toggle button {
+  margin-left: 5px;
+  padding: 6px 12px;
+  font-weight: bold;
+  background-color: #0055a5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#language-toggle button:hover {
+  background-color: #003f7f;
+}
