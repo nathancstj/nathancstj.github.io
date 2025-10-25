@@ -3461,3 +3461,36 @@ input[type="button"]:disabled,
 #language-toggle button:hover {
   background-color: #003f7f;
 }
+.cv-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #0055a5;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.cv-button:hover {
+  background-color: #003f7f;
+}
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#four ul {
+  list-style: none;
+  padding-left: 0;
+}
+#four li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+#four a {
+  color: #0055a5;
+  text-decoration: none;
+}
+#four a:hover {
+  text-decoration: underline;
+}
