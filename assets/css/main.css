@@ -3494,3 +3494,38 @@ input[type="button"]:disabled,
 #four a:hover {
   text-decoration: underline;
 }
+body {
+  background-color: #2C2C2C; /* fond anthracite */
+  color: #F5F5F5; /* texte clair pour contraste */
+  -webkit-text-size-adjust: none;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+a {
+  color: #4F81BD; /* bleu acier pour les liens */
+}
+a:hover {
+  color: #A7C7E7; /* bleu clair au survol */
+}
+
+h3, h4 {
+  color: #F5F5F5; /* titres en blanc cassé */
+}
+
+.cv-button {
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+}
+.cv-button:hover {
+  background-color: #3A6DA0;
+}
+section {
+  background-color: #2C2C2C;
+  padding: 40px;
+  border-radius: 8px;
+}
