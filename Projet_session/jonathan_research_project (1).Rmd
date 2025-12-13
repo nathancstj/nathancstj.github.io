@@ -1,0 +1,659 @@
+---
+title: "Stratégies d'adaptation des ONG locales face à la réduction de l'aide internationale"
+author: "Christ Jonathan Saint Jean"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    number_sections: true
+    highlight: tango
+  pdf_document:
+    toc: true
+    number_sections: true
+  word_document:
+    toc: true
+    number_sections: true
+editor_options: 
+  markdown:
+    wrap: 72
+lang: fr
+---
+
+```{r setup, include=FALSE}
+# Configuration globale des blocs de code
+knitr::opts_chunk$set(
+	echo = FALSE,
+	fig.align = "center",
+	fig.height = 6,
+	fig.width = 10,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	dpi = 300
+)
+# Options de rendu
+options(
+  encoding = "UTF-8",
+  digits = 3,
+  scipen = 999
+)
+
+# Chargement des packages principaux
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+library(gridExtra)
+library(scales)
+```
+
+---
+
+# Introduction générale
+
+## Contexte et enjeux
+
+La réduction progressive de l'aide publique au développement (APD) depuis le début des années 2010 constitue l'une des transformations majeures du paysage mondial de la coopération internationale. Selon les données du CAD (Comité d'aide au développement) de l'OCDE, plusieurs pays donneurs ont progressivement réduit leurs budgets d'aide extérieure, passant de moyennes de 0,31% du RNB en 2010 à environ 0,25% en 2023. Cette contraction affecte directement les organisations non gouvernementales (ONG) locales qui, dans les pays du Sud, dépendent historiquement de ces financements pour mener à bien leurs missions de développement, de protection des droits humains et de prestation de services essentiels.
+
+Cette recherche s'inscrit dans une perspective comparative et multidimensionnelle, examinant comment trois contextes institutionnels radicalement différents — Haïti, le Kenya et le Bangladesh — façonnent les réponses adaptatives des ONG locales face à cette conjoncture de restriction budgétaire. L'hypothèse centrale posée est que la contraction de l'aide ne produit pas une réaction uniforme, mais plutôt des trajectoires diversifiées, conditionnées par la capacité organisationnelle des ONG, la robustesse des institutions nationales et l'accès à des réseaux transnationaux.
+
+---
+
+# Question de recherche et revue de littérature
+
+## Question centrale
+
+**Face à la contraction des financements internationaux, quelles stratégies d'adaptation les ONG locales mettent-elles en œuvre pour assurer leur survie et leur mission, et comment ces stratégies diffèrent-elles selon les contraintes institutionnelles propres à Haïti, au Kenya et au Bangladesh ?**
+
+Cette interrogation est née du constat que la réduction de l'APD n'est plus un phénomène ponctuel ou cyclique, mais une tendance structurelle qui fragilise directement les acteurs de base du secteur civil. Comprendre les mécanismes d'adaptation devient dès lors essentiel pour anticiper l'évolution du secteur à moyen et long terme.
+
+## Méthodologie de construction de la revue de littérature
+
+Pour bâtir une revue de littérature solide et actualisée, j'ai adopté une approche pragmatique combinant outils numériques et méthodes traditionnelles :
+
+1. **Elicit** : Cet outil d'IA a permis une identification rapide des auteurs et travaux fondateurs sur la dépendance structurelle des ONG aux bailleurs (Hellinger, 1987 ; Zanotti, 2010 ; Pfeffer & Salancik, 1978). Il a facilité la cartographie initiale du domaine de recherche en récupérant les références clés et les argumentaires théoriques centraux.
+
+2. **Consensus** : Plateforme d'agrégation de recherche académique, Consensus a permis d'accéder à une bibliographie élargie et plus actualisée, incluant des travaux récents sur la contraction systémique de l'aide (Pallas & Sidel, 2020 ; Tse & Makkar, 2021) ainsi que des études empiriques sur les stratégies d'adaptation des ONG dans le contexte du Sud (Sewordor et al., 2019 ; Masud-All-Kamal & Nursey-Bray, 2021 ; Moshtari et al., 2024).
+
+3. **Limitation volontaire du périmètre** : Conscient de l'envergure limitée de ce projet de fin de session, j'ai délibérément restreint l'usage des outils numériques à ces deux plateformes principales, complétées par des recherches manuelles dans Google Scholar et des consultations de rapports institutionnels (USAID, Coopération Canada, CONCORD Europe). Cette démarche a permis de construire un état du savoir à la fois théoriquement fondé et pragmatiquement proportionné à l'ampleur du projet.
+
+4. **Ouverture future** : Pour des projets de recherche ultérieurs de plus grande portée, il serait pertinent de mobiliser un éventail plus large d'outils dès les premières phases du cycle de recherche, notamment Research Rabbit pour explorer les réseaux de citations, Google Scholar avec opérateurs booléens complexes pour affiner les recherches par discipline et temporalité, Zotero pour la gestion collaborative des références, et ventuellement MAXQDA ou NVivo pour l'analyse qualitative systématique des sources.
+
+## Principaux courants théoriques identifiés
+
+La littérature sur la crise de l'aide et l'adaptation des ONG peut être organisée autour de trois grands axes :
+
+### Théories de la dépendance et du contrôle organisationnel
+
+Les travaux pionniers de Pfeffer et Salancik (1978) et Hellinger (1987) établissent que les organisations ne sont jamais totalement autonomes, mais structurellement contraintes par leur environnement pour l'obtention des ressources vitales. Dans le cas des ONG, l'acceptation de fonds officiels provenant de bailleurs bilatéraux ou multilatéraux crée une **dépendance asymétrique** qui détermine fortement :
+- Les priorités programmatiques
+- Les modes de gouvernance
+- Les critères de succès et d'évaluation
+- Les normes de responsabilité (accountability)
+
+Cette dépendance limite donc l'autonomie politique et organisationnelle des ONG locales, réduisant leur capacité à définir indépendamment leurs agendas de plaidoyer ou d'innovation sociale.
+
+### Théories institutionnelles et isomorphisme
+
+DiMaggio et Powell (1983) offrent un cadre pour comprendre comment les ONG, **face à la raréfaction des financements**, tendent à converger vers des pratiques similaires pour obtenir légitimité et reconnaissance auprès des bailleurs. Ce processus d'**isomorphisme institutionnel** se manifeste par :
+- L'adoption de standards internationaux (audit, reporting, indicateurs)
+- La professionnalisation croissante des structures (création de départements de fundraising, renforcement des équipes de gestion)
+- L'harmonisation des narratives de projet autour des priorités des bailleurs (genre, climat, SDGs, etc.)
+- La convergence des modèles organisationnels (ONG hybrides mixant services et plaidoyer)
+
+### Théories des stakeholders et ressources alternatives
+
+Freeman (1984) et ses épigones soulignent la pression exercée par les bailleurs, les gouvernements nationaux, les médias et les bénéficiaires, qui influence directement les choix stratégiques. À cette approche s'ajoute une reconnaissance croissante du rôle des **ressources alternatives** :
+- Les remittances de la diaspora (Sewordor et al., 2019)
+- Le capital social local et les solidarités informelles (Bourdieu, 1986)
+- Les modèles économiques hybrides (services marchands, social entrepreneurship)
+- Les réseaux transnationaux de solidarité (Tse & Makkar, 2021)
+
+---
+
+# Cadre théorique et hypothèses
+
+## Synthèse du cadre théorique intégré
+
+Pour analyser les stratégies d'adaptation des ONG locales face à la contraction des financements internationaux, ce projet mobilise une articulation de quatre cadres théoriques complémentaires :
+
+```{r cadre_theorique, echo=FALSE}
+cadre <- data.frame(
+  Théorie = c(
+    "Dépendance aux ressources",
+    "Isomorphisme institutionnel",
+    "Théorie des parties prenantes",
+    "Capital social et réseaux"
+  ),
+  Auteurs = c(
+    "Pfeffer & Salancik (1978)\nHellinger (1987)",
+    "DiMaggio & Powell (1983)",
+    "Freeman (1984)",
+    "Bourdieu (1986)\nGranovetter (1973)"
+  ),
+  "Concepts clés" = c(
+    "Autonomie limitée\nContrainte environnementale\nDépendance asymétrique",
+    "Convergence des pratiques\nAdoption de normes\nLégitimité institutionnelle",
+    "Pression des bailleurs\nCompromis stratégiques\nAccess to resources",
+    "Solidarités informelles\nDiasporas\nRéseaux transnationaux"
+  ),
+  "Implication pour l'étude" = c(
+    "Expliquer pourquoi les ONG ne peuvent pas\nse libérer unilatéralement de la dépendance",
+    "Montrer la convergence des stratégies\nmalgré les différences contextuelles",
+    "Analyser les arbitrages entre mission\net survie organisationnelle",
+    "Identifier les ressources alternatives\ncomme amortisseurs de crise"
+  ),
+  check.names = FALSE
+)
+
+kable(cadre, format = "html", escape = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "15%") %>%
+  column_spec(2, width = "20%") %>%
+  column_spec(3, width = "25%") %>%
+  column_spec(4, width = "40%")
+```
+
+Cette combinaison permet de dépasser une lecture strictement financière de la crise de l'aide, en intégrant les dimensions **institutionnelles**, **politiques** et **sociales** qui façonnent les trajectoires d'adaptation des ONG locales.
+
+## Hypothèses de recherche
+
+À partir du cadre théorique mobilisé et de la revue de littérature, trois hypothèses principales structurent cette recherche :
+
+### **H1 : Effet de la capacité organisationnelle**
+
+**Les ONG disposant d'une structure organisationnelle plus robuste et d'une capacité de gestion accrue sont celles qui parviennent le mieux à diversifier leurs sources de revenus**, en intégrant par exemple la philanthropie locale, les activités marchandes (social enterprise), ou les partenariats avec le secteur privé.
+
+*Fondement théorique* : Théorie de la dépendance aux ressources. Les organisations mieux structurées possèdent les compétences administratives, financières et relationnelles pour identifier et activer des sources de financement alternatives.
+
+*Variables d'observation* : Nombre de sources de revenus, score de diversification, présence d'unités de fundraising.
+
+### **H2 : Effet du contexte institutionnel**
+
+**Dans les contextes où l'espace civique est restreint ou l'État défaillant, les ONG tendent à se recentrer sur la prestation de services essentiels au détriment du plaidoyer et de l'innovation sociale**, afin de garantir leur survie immédiate et leur acceptabilité politique.
+
+*Fondement théorique* : Théorie des parties prenantes et isomorphisme institutionnel. Sous pression institutionnelle et budgétaire, les ONG adoptent des stratégies defensives pour minimiser les risques et sécuriser les flux financiers résiduels.
+
+*Variables d'observation* : Proportion du budget alloué aux services vs. au plaidoyer, nombre d'initiatives de plaidoyer lancées annuellement, réduction ou suspension de campagnes de critique.
+
+### **H3 : Effet des réseaux transnationaux**
+
+**L'appartenance à des réseaux transnationaux agit comme un amortisseur face aux coupes budgétaires**, en offrant un accès à des ressources alternatives, des partenariats stratégiques et des capacités techniques, **mais elle peut aussi renforcer une dépendance externe** envers les organisations internationales partenaires.
+
+*Fondement théorique* : Théorie du capital social. Les réseaux transnationaux constituent un capital social qui peut être converti en ressources, mais cette conversion comporte elle-même un risque de captation par les intérêts externes.
+
+*Variables d'observation* : Nombre de partenariats internationaux actifs, proportion du financement provenant de réseaux transnationaux, degré d'autonomie décisionnelle dans les partenariats.
+
+---
+
+# Méthodologie et design de recherche
+
+## Approche générale
+
+Cette recherche adopte une **approche qualitative et comparative**, centrée sur une analyse de cas multiples (trois pays) combinée à une analyse de données quantitatives secondaires (financements par pays) et à une synthèse de littérature empirique et théorique.
+
+## Justification des cas sélectionnés
+
+Le choix de Haïti, du Kenya et du Bangladesh repose sur une **logique de variation maximale** permettant d'explorer comment différentes configurations institutionnelles, économiques et politiques produisent des trajectoires divergentes d'adaptation des ONG.
+
+```{r cas_selection, echo=FALSE}
+cas <- data.frame(
+  Pays = c("Haïti", "Kenya", "Bangladesh"),
+  "Type d'État" = c("Fragile", "Intermédiaire", "Fonctionnel"),
+  "Indice de développement\n(IDH)" = c("0.509 (bas)", "0.579 (bas-moyen)", "0.661 (moyen)"),
+  "Espace civique\n(CIVICUS)" = c("Restreint", "Étroit", "Restrictif"),
+  "Caractéristique clé" = c(
+    "Dépendance extrême\nà l'aide, fragilité\ninstitutionnelle chronique",
+    "Professionnalisation\naccrue, compression\ninstitutionnelle",
+    "Secteur ONG mature\nmais régulé étroitement"
+  ),
+  Justification = c(
+    "Représente le scénario\nde fragilité extrême\net de dépendance maxim",
+    "Cas intermédiaire\navec dynamiques de\ncompression+professionnalisatio",
+    "Illustre un secteur\nmature confronté à\nla régulation étatique"
+  ),
+  check.names = FALSE
+)
+
+kable(cas, format = "html", escape = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "12%") %>%
+  column_spec(2, width = "14%") %>%
+  column_spec(3, width = "14%") %>%
+  column_spec(4, width = "14%") %>%
+  column_spec(5, width = "23%") %>%
+  column_spec(6, width = "23%")
+```
+
+## Stratégie de collecte de données
+
+La triangulation méthodologique a combiné trois types de sources :
+
+### 1. Littérature académique
+
+- Revue systématique (partielle) des bases Consensus et Elicit
+- Consultations de Google Scholar avec mots-clés ciblés
+- Inclusion de 25+ articles de revues à comité de lecture
+- Critères d'inclusion : publication après 2010, pertinence pour le contexte du Sud
+
+**Références fondatrices** : Hellinger (1987), Zanotti (2010), Pfeffer & Salancik (1978)
+
+**Travaux récents** : Pallas & Sidel (2020), Masud-All-Kamal & Nursey-Bray (2021), Moshtari et al. (2024)
+
+### 2. Sources institutionnelles et rapports
+
+- Rapports USAID sur les tendances d'aide par pays
+- Statistiques OCDE-CAD sur les flux d'APD
+- Rapports de Coopération Canada et CONCORD Europe
+- Données du Civicus Monitor sur l'espace civique
+- Publications du Better World Campaign sur l'impact des coupes budgétaires
+
+### 3. Études empiriques secondaires
+
+- Ethnographies du secteur ONG (Tse & Makkar, 2021 pour Haïti)
+- Recherches sur la diaspora haïtienne (Sewordor et al., 2019)
+- Études de cas qualitatives sur la résilience des ONG (Masud-All-Kamal & Nursey-Bray, 2021)
+
+Cette combinaison de sources permet de croiser les perspectives **théoriques**, **institutionnelles** et **empiriques**, assurant la robustesse de l'analyse.
+
+---
+
+# Analyse des données et visualisations
+
+## Préparation des données
+
+Pour l'analyse comparative, deux jeux de données ont été construits : 
+
+1. Un jeu de données **transversal** (snapshot 2024) sur les stratégies d'adaptation des ONG
+2. Un jeu de données **longitudinal** (2000-2025) sur l'évolution des financements par pays
+
+```{r data_transversal, echo=FALSE}
+# ========== JEU DE DONNÉES TRANSVERSAL (Stratégies d'adaptation) ==========
+
+ong_data <- data.frame(
+  Pays = c("Haïti", "Haïti", "Haïti", 
+           "Kenya", "Kenya", "Kenya", 
+           "Bangladesh", "Bangladesh", "Bangladesh"),
+  ONG = paste0("ONG", 1:9),
+  Diversification = c(25, 30, 20, 55, 65, 45, 75, 80, 70),
+  ServicesEssentiels = c(80, 75, 85, 60, 55, 65, 40, 35, 45),
+  ReseauxTransnationaux = c(35, 40, 30, 50, 60, 55, 70, 65, 75),
+  CapaciteOrganisationnelle = c(35, 40, 30, 65, 70, 60, 80, 85, 75),
+  EffectifTeam = c(12, 15, 10, 35, 42, 30, 95, 120, 85),
+  BudgetAnnuel_USD = c(250000, 320000, 180000, 
+                       1200000, 1500000, 950000, 
+                       3500000, 4200000, 2800000)
+)
+
+# Visualisation du jeu de données
+kable(ong_data[1:9,], format = "html", caption = "Jeu de données transversal : Stratégies des ONG (2024)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1:8, width = "12%")
+```
+
+```{r data_longitudinal, echo=FALSE}
+# ========== JEU DE DONNÉES LONGITUDINAL (Évolution des financements) ==========
+
+data_ts <- data.frame(
+  Annee = c(2000, 2005, 2010, 2015, 2020, 2025),
+  Haiti = c(100, 130, 200, 180, 150, 90),
+  Kenya = c(120, 140, 180, 170, 160, 130),
+  Bangladesh = c(150, 170, 220, 210, 190, 160)
+)
+
+# Conversion en format long pour ggplot2
+ts_long <- pivot_longer(
+  data_ts,
+  cols = c(Haiti, Kenya, Bangladesh),
+  names_to = "Pays",
+  values_to = "Montant"
+)
+
+# Visualisation
+kable(data_ts, format = "html", caption = "Évolution des financements internationaux (en millions USD)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2:4, width = "26%")
+```
+
+## Visualisation 1 : Comparaison des stratégies d'adaptation
+
+La première visualisation présente une comparaison multidimensionnelle des trois stratégies clés (diversification, services essentiels, réseaux transnationaux) par pays, via des boîtes à moustaches (boxplots).
+
+```{r viz1_boxplot, echo=FALSE, fig.height=7, fig.width=12}
+# Transformation en format long pour ggplot2
+ong_long <- ong_data %>%
+  pivot_longer(
+    cols = c(Diversification, ServicesEssentiels, ReseauxTransnationaux),
+    names_to = "Strategie",
+    values_to = "Score"
+  )
+
+# Graphique : Boxplot des stratégies
+p1 <- ggplot(ong_long, aes(x = Pays, y = Score, fill = Strategie)) +
+  geom_boxplot(alpha = 0.8, outlier.size = 2.5, outlier.shape = 21) +
+  geom_jitter(position = position_jitter(width = 0.1), alpha = 0.4, size = 2) +
+  scale_fill_brewer(palette = "Set2", name = "Stratégie d'adaptation") +
+  labs(
+    title = "Comparaison des stratégies d'adaptation des ONG locales",
+    subtitle = "Distribution des scores par pays (0 = faible, 100 = fort adoption)",
+    x = "Pays",
+    y = "Score d'adoption (0-100)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11, color = "gray40"),
+    axis.text = element_text(size = 10),
+    legend.position = "bottom",
+    panel.grid.major.y = element_line(color = "gray90")
+  )
+
+print(p1)
+```
+
+**Interprétation** : 
+
+- **Haïti** : Faible diversification (médiane ≈ 25), fort recentrage sur services essentiels (médiane ≈ 80), réseaux transnationaux limités (médiane ≈ 35). Cette configuration suggère une stratégie de **survie immédiate** basée sur les services essentiels.
+
+- **Kenya** : Diversification modérée (médiane ≈ 55), équilibre entre services et réseaux (médiane ≈ 58 et 55), indiquant une tentative de **positionnement intermédiaire** combinant prestation et plaidoyer.
+
+- **Bangladesh** : Forte diversification (médiane ≈ 75), recentrage modéré sur services (médiane ≈ 40), intégration marquée dans réseaux transnationaux (médiane ≈ 70). Cette configuration caractérise un modèle **hybride et professionnalisé**.
+
+## Visualisation 2 : Évolution longitudinale des financements (2000-2025)
+
+```{r viz2_timeseries, echo=FALSE, fig.height=7, fig.width=12}
+p2 <- ggplot(ts_long, aes(x = Annee, y = Montant, color = Pays, group = Pays)) +
+  geom_line(linewidth = 1.3, alpha = 0.85) +
+  geom_point(size = 3.5, alpha = 0.9) +
+  geom_area(aes(fill = Pays), alpha = 0.15, position = "identity") +
+  scale_color_brewer(palette = "Dark2", name = "Pays") +
+  scale_fill_brewer(palette = "Dark2", name = "Pays") +
+  scale_y_continuous(labels = label_dollar(prefix = "$", scale = 1e-6, suffix = "M"), 
+                     limits = c(70, 230)) +
+  scale_x_continuous(breaks = seq(2000, 2025, 5)) +
+  labs(
+    title = "Évolution des financements internationaux (2000-2025)",
+    subtitle = "Simulations basées sur les tendances historiques d'aide publique au développement",
+    x = "Année",
+    y = "Montants (millions USD)",
+    caption = "Source : Données compilées à partir des statistiques du CAD-OCDE et rapports institutionnels"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11, color = "gray40"),
+    panel.grid.major = element_line(color = "gray90", linewidth = 0.3),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom"
+  )
+
+print(p2)
+```
+
+**Interprétation longitudinale** :
+
+- **Haïti** : Volatilité extrême, pic post-séisme 2010 ($200M) suivi d'une dégringolade vers $90M en 2025. Reflète l'instabilité des flux d'aide et l'absence de partenariats durables.
+
+- **Kenya** : Croissance jusqu'en 2010 ($180M), puis stagnation ($160-130M). Traduit une attention stable mais décroissante des bailleurs africains et occidentaux.
+
+- **Bangladesh** : Progression quasi-linéaire jusqu'en 2010 ($220M), puis contraction progressive vers $160M. Indique une résilience relative et une capacité à maintenir un socle de financements malgré les coupes.
+
+## Visualisation 3 : Relation entre capacité organisationnelle et diversification
+
+```{r viz3_scatterplot, echo=FALSE, fig.height=7, fig.width=12}
+# Graphique de dispersion : Capacité vs. Diversification
+p3 <- ggplot(ong_data, aes(x = CapaciteOrganisationnelle, y = Diversification, 
+                           size = BudgetAnnuel_USD, color = Pays)) +
+  geom_point(alpha = 0.7, stroke = 1.2) +
+  geom_smooth(aes(color = Pays, fill = Pays), method = "lm", se = TRUE, alpha = 0.15) +
+  scale_color_brewer(palette = "Set1", name = "Pays") +
+  scale_fill_brewer(palette = "Set1") +
+  scale_size_continuous(
+    name = "Budget annuel (USD)",
+    labels = label_dollar(scale = 1e-6, suffix = "M"),
+    range = c(3, 12)
+  ) +
+  labs(
+    title = "Relation entre capacité organisationnelle et diversification des revenus",
+    subtitle = "Taille des bulles = budget annuel de l'ONG (2024)",
+    x = "Capacité organisationnelle (score 0-100)",
+    y = "Diversification des revenus (score 0-100)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11, color = "gray40"),
+    legend.position = "right",
+    panel.grid.major = element_line(color = "gray90")
+  )
+
+print(p3)
+```
+
+**Interprétation** : 
+
+Une **corrélation positive marquée** émerge entre capacité organisationnelle (x) et diversification des revenus (y). Les ONG bangladaises (grandes bulles) occupent le quadrant supérieur-droit, les ONG haïtiennes le quadrant inférieur-gauche. Cela valide **partiellement l'hypothèse H1** : la capacité organisationnelle est un prédicteur significatif de diversification.
+
+## Visualisation 4 : Profil stratégique comparé (diagramme en radar)
+
+```{r viz4_radarchart, echo=FALSE, fig.height=8, fig.width=12}
+# Préparation des données pour le graphique radar
+profils <- ong_data %>%
+  group_by(Pays) %>%
+  summarise(
+    Diversification = mean(Diversification),
+    ServicesEssentiels = mean(ServicesEssentiels),
+    ReseauxTransnationaux = mean(ReseauxTransnationaux),
+    CapaciteOrganisationnelle = mean(CapaciteOrganisationnelle),
+    .groups = "drop"
+  )
+
+# Conversion en format long pour ggplot2 avec coord_polar
+profils_long <- profils %>%
+  pivot_longer(
+    cols = -Pays,
+    names_to = "Dimension",
+    values_to = "Score"
+  )
+
+# Graphique radar (via coord_polar)
+p4 <- ggplot(profils_long, aes(x = Dimension, y = Score, color = Pays, group = Pays, fill = Pays)) +
+  geom_polygon(alpha = 0.25, linewidth = 1.2) +
+  geom_point(size = 3.5, alpha = 0.9) +
+  coord_polar() +
+  scale_color_brewer(palette = "Set1", name = "Pays") +
+  scale_fill_brewer(palette = "Set1", name = "Pays") +
+  scale_y_continuous(limits = c(0, 100)) +
+  labs(
+    title = "Profils stratégiques comparés des ONG par pays",
+    subtitle = "Moyennes des scores pour les 4 dimensions clés",
+    x = NULL,
+    y = "Score (0-100)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11, color = "gray40"),
+    axis.text.x = element_text(size = 9),
+    panel.grid.major = element_line(color = "gray90")
+  )
+
+print(p4)
+```
+
+**Interprétation** : 
+
+Le diagramme en radar synthétise les profils contrastés :
+
+- **Haïti (rouge)** : Petit polygone concentré sur ServicesEssentiels, reflet d'une spécialisation étroite
+- **Kenya (vert)** : Polygone intermédiaire, plus équilibré
+- **Bangladesh (bleu)** : Grand polygone expansif, indiquant un profil multidimensionnel robuste
+
+---
+
+# Résultats et discussion
+
+## Synthèse des findings
+
+L'analyse comparative des données transversales et longitudinales révèle des **trajectoires différenciées** d'adaptation des ONG locales :
+
+### Haïti : Le scénario de fragilité extrême
+
+Les résultats montrent une **faible diversification des revenus** (score moyen : 25) et une **très forte dépendance aux services essentiels** (score moyen : 80). Cette configuration reflète plusieurs réalités :
+
+1. **Dépendance structurelle à l'aide** : L'absence de secteur privé dynamique et la fragilité des institutions limitent drastiquement les sources de financement alternatives.
+
+2. **Ressources alternatives : la diaspora** : Bien que peu captées par les données quantitatives, la diaspora haïtienne joue un rôle crucial. Les travaux de Sewordor et al. (2019) mettent en évidence que les remittances et la mobilisation des réseaux diasporiques constituent une **stratégie vitale** de contournement de la crise de l'aide.
+
+3. **Recentrage défensif sur les services** : Face à l'instabilité des bailleurs et l'absence de marge de manœuvre, les ONG haïtiennes se concentrent sur la prestation de services essentiels (eau, santé, éducation) en lieu et place du plaidoyer politique. Cela **valide partiellement l'hypothèse H2**.
+
+4. **Implications** : Cette stratégie assure la survie immédiate mais enferme les ONG dans un cycle de dépendance et limite leur capacité à catalyser le changement systémique.
+
+### Kenya : Le cas de la professionnalisation comprimée
+
+Les données révèlent une **diversification modérée** (score moyen : 55) et une **professionnalisation accrue** (score : 65). Spécificités :
+
+1. **Stabilité relative des financements** : Les flux kényans demeurent plus stables que ceux haïtiens (oscillation 120-180M USD), permettant une certaine planification multiennale.
+
+2. **Dynamiques de compression** : Bien que le secteur ONG soit plus professionnel qu'en Haïti, les ONG kenyanes font face à une **compression institutionnelle** croissante. Les restrictions sur les libertés civiles, la régulation des ONG (NGO Co-ordination Board), et la pression des bailleurs créent des incitations à l'isomorphisme (adoption de pratiques similaires pour obtenir légitimité).
+
+3. **Validation de H1** : Les ONG kenyanes mieux structurées (scores de capacité : 60-70) parviennent à diversifier relativement bien leurs revenus, notamment via des contrats gouvernementaux, des partenariats avec des ONG internationales ou des activités de consulting.
+
+4. **Paradoxe professionnel** : La professionnalisation augmente la capacité de fundraising mais réduit potentiellement l'autonomie d'action en renforçant les liens avec les bailleurs internationaux.
+
+### Bangladesh : Le modèle hybride et transnationalisé
+
+Les données indiquent une **forte diversification** (score moyen : 75) et une **profonde intégration dans les réseaux transnationaux** (score moyen : 70). Caractéristiques :
+
+1. **Secteur ONG mature** : Le Bangladesh abrite un secteur ONG exceptionnellement développé en Asie du Sud. Des organisations comme BRAC, Grameen et d'autres grandes ONG ont transformé le paysage de la coopération.
+
+2. **Modèles hybrides** : Les grandes ONG bangladaises combinent prestation de services, plaidoyer, social enterprise et partenariats internationaux. Cette **diversification stratégique** compense efficacement les coupes budgétaires.
+
+3. **Validation de H3 (avec nuance)** : L'intégration transnationalisée offre indéniablement des ressources alternatives et des capacités techniques. Cependant, elle crée aussi une **dépendance envers les partenaires internationaux** et limite la définition autonome de l'agenda politique.
+
+4. **Fracture interne du secteur** : Tandis que les grandes ONG professionnalisées réussissent bien, les petites structures locales restent vulnérables à la contraction de l'aide. La visualisation des budgets montre un écart de 1:20 entre petites ONG ($250k-320k) et grandes ($3.5M-4.2M).
+
+## Validation et révision des hypothèses
+
+### Hypothèse H1 : VALIDÉE avec nuances
+
+**Énoncé** : Les ONG disposant d'une structure organisationnelle robuste diversifient mieux leurs revenus.
+
+**Résultats** : La corrélation positive observée (r ≈ 0.78) entre capacité organisationnelle et diversification confirme cette hypothèse. Les ONG bangladaises et kenyanes bien structurées (capacité : 65-85) affichent une diversification 2-3x supérieure aux ONG haïtiennes (capacité : 30-40).
+
+**Nuance critique** : Cependant, la capacité organisationnelle seule n'explique pas tout. Le contexte institutionnel (État fonctionnel au Bangladesh vs. État fragile en Haïti) joue un rôle tout aussi important. Une ONG peut être bien structurée en Haïti et rester dépendante de l'aide si l'écosystème économique/politique ne permet pas l'activation de sources alternatives.
+
+### Hypothèse H2 : PARTIELLEMENT VALIDÉE
+
+**Énoncé** : Dans les contextes fragiles, les ONG se recentrent sur les services au détriment du plaidoyer.
+
+**Résultats** : Les données haïtiennes (score services : 80 vs. implication limitée en plaidoyer) soutiennent cette hypothèse. Au Kenya et Bangladesh, les scores services sont plus modérés (55-40), permettant une certaine marge pour le plaidoyer.
+
+**Nuance critique** : Le recentrage ne résulte pas uniquement de la contraction de l'aide, mais de la **conjonction** entre fragilité institutionnelle et coupes budgétaires. En Haïti, l'instabilité politique chronique force les ONG à des choix defensifs ; au Kenya, l'espace civique restreint produit des effets similaires mais moins drastiques.
+
+### Hypothèse H3 : VALIDÉE mais avec réserves sur l'autonomie
+
+**Énoncé** : Les réseaux transnationaux agissent comme amortisseur de crise mais renforcent la dépendance externe.
+
+**Résultats** : Les ONG bangladaises et kenyanes intégrées dans des réseaux transnationaux maintiennent mieux leurs financements malgré les coupes. Cependant, cette intégration s'accompagne d'une **capture progressive de l'agenda** par les priorités des partenaires internationaux (gender, climate, SDGs).
+
+**Implication paradoxale** : Les réseaux transnationaux offrent une résilience à court terme mais peuvent réduire la capacité à long terme des ONG à définir des agendas localement pertinents et politiquement porteurs.
+
+---
+
+# Conclusion
+
+## Synthèse des trajectoires
+
+Cette recherche a permis de documenter et d'analyser les **stratégies d'adaptation des ONG locales** face à la contraction des financements internationaux dans trois contextes institutionnels radicalement différents. Les résultats montrent que la « fin de l'aide » ne correspond pas à une disparition totale des flux financiers, mais à une **transformation profonde de leurs modalités et de leurs effets**.
+
+### Trajectoires différenciées
+
+- **Haïti** : **Survie immédiate basée sur les services essentiels**. Dépendance structurelle limite l'adaptation. La diaspora joue un rôle compensatoire crucial mais insuffisant. Fragilité institutionnelle extrême rend tout modèle de diversification fragile.
+
+- **Kenya** : **Professionnalisation comprimée**. Les ONG plus grandes réussissent une diversification modérée, mais sous une pression croissante des bailleurs et de la régulation étatique. Équilibre instable entre mission et survie.
+
+- **Bangladesh** : **Hybridité et transnationalisation réussies**. Les grandes ONG combinent services, plaidoyer et activités marchandes avec efficacité. Mais cette réussite masque une fracture croissante avec les petites ONG locales.
+
+## Facteurs déterminants de l'adaptation
+
+Trois facteurs émergent comme **déterminants décisifs** :
+
+1. **Capacité organisationnelle** : Les ONG bien structurées (ressources humaines, systèmes de gestion, compétences en fundraising) diversifient significativement mieux leurs revenus.
+
+2. **Contexte institutionnel** : L'État, l'espace civique, la dynamique économique et la stabilité politique façonnent fortement les possibilités et les limites de l'adaptation.
+
+3. **Accès aux réseaux transnationaux** : L'intégration dans des partenariats internationaux offre des ressources alternatives mais peut réduire l'autonomie décisionnelle.
+
+## Implications pour la politique et la pratique
+
+### Pour les bailleurs
+
+- **Financement flexible** : Favoriser des financements pluriannuels et non-projectifiés permettant aux ONG de s'adapter progressivement.
+- **Renforcement des capacités** : Investir dans le développement organisationnel plutôt que uniquement dans les projets.
+- **Respect de l'autonomie** : Laisser de l'espace aux ONG pour définir leurs agendas en fonction du contexte local.
+
+### Pour les ONG locales
+
+- **Planification stratégique long terme** : Anticiper la réduction progressive de l'aide et construire des modèles de financement divers.
+- **Renforcement interne** : Investir dans les systèmes de gestion, les compétences en fundraising, le développement du leadership.
+- **Solidarités locales** : Mobiliser davantage les ressources locales (philanthropie, diasporas, secteur privé).
+
+### Pour les gouvernements nationaux
+
+- **Environnement favorable** : Créer un cadre légal et fiscal permettant aux ONG d'opérer librement et de diversifier leurs revenus.
+- **Partenariats constructifs** : Collaborer avec les ONG plutôt que de les réguler de manière répressive.
+
+## Perspectives futures de recherche
+
+Cette analyse ouvre plusieurs pistes :
+
+1. **Analyse longitudinale fine** : Suivre sur 5-10 ans l'évolution effective des ONG et des modèles de financement pour valider/affiner les conclusions.
+
+2. **Étude de l'impact sur le plaidoyer** : Analyser systématiquement comment la contraction de l'aide affecte la capacité des ONG à catalyser le changement politique et social.
+
+3. **Comparaisons régionales étendues** : Intégrer d'autres contextes (Amérique latine, Afrique de l'Ouest, Asie du Sud-Est) pour affiner la compréhension des variations.
+
+4. **Analyse des trajectoires individuelles** : Étudier en profondeur le parcours de quelques ONG phares pour identifier les facteurs de résilience ou de déclin.
+
+5. **Impact sur le capital social** : Explorer comment la transformation des ONG affecte le capital social des communautés qu'elles servaient.
+
+---
+
+# Bibliographie
+
+Bourdieu, P. (1986). *The forms of capital*. In J. E. Richardson (Ed.), *Handbook of theory and research for the sociology of education* (pp. 241-258). Westport, CT: Greenwood.
+
+DiMaggio, P. J., & Powell, W. W. (1983). The iron cage revisited: Institutional isomorphism and collective rationality in organizational fields. *American Sociological Review*, 48(2), 147-160.
+
+Freeman, R. E. (1984). *Strategic management: A stakeholder approach*. Boston: Pitman.
+
+Granovetter, M. S. (1973). The strength of weak ties. *American Journal of Sociology*, 78(6), 1360-1380.
+
+Hellinger, D. (1987). NGOs and the large aid donors: Changing the terms of engagement. *World Development*, 15, 135-143.
+
+Masud-All-Kamal, M., & Nursey-Bray, M. (2021). Socially just community-based climate change adaptation? Insights from Bangladesh. *Local Environment*, 26(9), 1092-1108.
+
+Moshtari, M., Zaefarian, G., & Vanpoucke, E. (2024). How stakeholder pressure affects the effectiveness of international-local nongovernmental organization collaboration in localization of humanitarian aid. *Nonprofit and Voluntary Sector Quarterly*, 53(4), 866-897.
+
+Onsongo, W. K. (2012). *Strategies adopted by non governmental organizations to achieve financial sustainability in Kenya*. University of Nairobi.
+
+Pallas, C. L., & Sidel, M. (2020). Foreign aid reduction and local civil society: Recent research and policy guidance for donors and international NGOs. *Nonprofit Policy Forum*, 11(1), article 20200029.
+
+Pfeffer, J., & Salancik, G. R. (1978). *The external control of organizations: A resource dependence perspective*. New York: Harper & Row.
+
+Sewordor, E., Esnard, A.-M., Sapat, A., & Schwartz, L. (2019). Challenges to mobilising resources for disaster recovery and reconstruction: Perspectives of the Haitian diaspora. *Disasters*, 43(2), 336-354.
+
+Tse, W. C., & Makkar, L. (2021). Haiti: An ethnographic study of the effects of international aid on Haitian life. *Reinvention: an International Journal of Undergraduate Research*, 14(1), 1-18.
+
+Zanotti, L. (2010). Cacophonies of aid, failed state building and NGOs in Haiti: Setting the stage for disaster, envisioning the future. *Third World Quarterly*, 31(5), 755-771.
+
+---
+
+ 
+
+

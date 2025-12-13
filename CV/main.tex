@@ -1,0 +1,174 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+\Large Christ Jonathan \textbf{\textsc{Saint Jean}} \normalsize 
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{christ.jpg}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+\headleft{Profile Summary}
+Animé par une profonde passion pour les grands enjeux internationaux, la diversité culturelle et le développement durable, je m'engage à comprendre les dynamiques qui façonnent notre monde et à contribuer à des solutions durables. Originaire d'un État sous-développé, mon parcours personnel nourrit ma volonté de surmonter les défis structurels et sociaux auxquels font face de nombreuses régions du globe.
+
+\headleft{Contact details}
+\small % To fit more content
+\MVAt\ {\small nathancstj@gmail.com} \\[0.4ex]
+\Mobilefone\ +1\,263\,366\,3837 \\[0.5ex]
+\Letter\ 400-2275 Rue de l'Universite, Quebec, QC, G1V A08
+\normalsize
+
+\headleft{Personal information}
+%Year of birth: \textbf{1861} \\[0.5ex]
+Citizenship: \textbf{Haïtien} \\[0.5ex]
+Family: \textbf{Célibataire} \\[0.5ex]
+Languages: \textbf{Anglais}, \textbf{Français}, \textbf{Créole Haïtien}
+
+\headleft{Skills}
+\begin{itemize}
+\item Microsoft Excel, MS Word,MS PowerPoint
+\item JavaScript, HTML, GitHub, Rstudio
+\item Communication et travail d’équipe
+\item Leadership et agilité
+\end{itemize} 
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{2ex}
+
+\headright{Expérience}
+
+\textsc{Jeune Conseiller Aux Affaires Internationales} a \textit{Gouvernement Jeunesse D'Haiti (Port-au-Prince, Haiti).}  \dates{2024.09- Aujourd'hui} \\
+
+\smaller{Analyser les enjeux géopolitiques et proposer des recommandations stratégiques.}
+
+\is
+\smaller{Assurer le suivi et l’évaluation des projets pour mesurer leur impact.}
+
+\is
+\smaller{Participer à la conception et la mise en œuvre de projets de coopération internationale}
+
+
+\textsc{Rédacteur / Responsable De La Communication Et Du Développement} a \textit{Journal La Ruche (Port-au-Prince, Haiti).}  \dates{2023.09- Aujourd'hui} \\
+
+\is
+\smaller{Rédiger et produire du contenu journalistique (Relations Internationales)}
+
+\is
+\smaller{Travailler en collaboration avec la direction éditoriale.}
+
+\is 
+\smaller{Promouvoir le journal et gérer les relations publiques.}
+
+
+\textsc{Président Du Comité D'étudiant De La FSJP} a \textit{Université Quisqueya (Port-au-Prince, Haiti).}  \dates{2021.03- 2023.11} \\
+
+\is
+\smaller{Présider un cartel forme de 3 membres, Proposer de nouvelles idées pour enrichir et renforcer le sentiment d'appartenance} 
+
+\is
+\smaller{Organiser et mettre en œuvre des événements, coordonner et assurer un suivi régulier des activités.}
+
+\is
+\smaller{Représenter les étudiants auprès de l'administration, des professeurs et autres organismes.}
+
+\headright{Éducation}
+
+\textsc{Maîtrise en Études Internationales, Développement International (Mémoire).} \textit{Université Laval, Canada}. \dates{2025- en cours} \\
+
+\is
+\textsc{Licence en Science Politique, Relations Internationales.} \textit{Université Quisqueya, Haiti}.  \dates{2018--2022} \\
+
+\headright{Certifications}
+
+\smaller{\textsc{Certificat (MOOC): Développement durable: Enjeux et trajectoires,}} \textit{Université Laval, Canada.} \dates{Mars 2024} \\
+\is
+\smaller{\textsc{Certificat (MOOC): Management Responsable,} \textit{Université Laval, Canada.}} \dates{Novembre-2022} \\
+\is
+\smaller{\textsc{Certificat: Lutte contre la traite des personnes et toute sorte de violences sur les femmes et les enfants}} par \textit{International Association Of Women Judges/Fokal.} \dates{Février-2022} \\
+
+\headright{Intérêts}
+
+\textit{Développement personnel et communautaire, réunions de groupe, Association de jeunes (JERH, Toastmaster International, etc...)}
+\end{minipage}
+
+\end{document}
